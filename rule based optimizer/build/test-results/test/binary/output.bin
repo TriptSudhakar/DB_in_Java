@@ -1,0 +1,12 @@
+[+] Logical RelNode:
+ALogicalProject(EXPR$0=[+($0, 5.0:DECIMAL(2, 1))], ADDRESS=[$1])
+/  LogicalFilter(condition=[<($1, 'Pratham')])
+3    LogicalProject(ADDRESS_ID=[$0], ADDRESS=[$1])
+<      LogicalFilter(condition=[>($1, '0Aman and Devang')])
+0        PTableScan(table=[[FILM_DB, address]])
+
+[+] Physical RelNode:
+APProjectFilter(EXPR$0=[+($0, 5.0:DECIMAL(2, 1))], ADDRESS=[$1])
+1  PProjectFilter(ADDRESS_ID=[$0], ADDRESS=[$1])
+,    PTableScan(table=[[FILM_DB, address]])
+
